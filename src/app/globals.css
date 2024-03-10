@@ -6,6 +6,24 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-background: #FFF8E3,
+    --primary-color: #226D2A,
+    --background-cream-pink: #F3D7CA,
+    --background-light-gray: #CCD3CA,
+    --text-color-primary: #002264,
+    --text-color-white: #FFFFFF,
+    --text-sub-color: #A2A7A5
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+p {
+  color: #002264;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,13 +35,10 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  color: #002264;
+  /* background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
