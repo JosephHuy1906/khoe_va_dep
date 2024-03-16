@@ -8,7 +8,25 @@
 
     }
 
+    .avatar {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+    }
+
     .isAcctive {
         font-weight: bold;
+    }
+}
+
+@media (max-width:500px) {
+    .header {
+        height: 70px;
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
     }
 }

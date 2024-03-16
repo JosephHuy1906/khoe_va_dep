@@ -14,6 +14,7 @@ import React, { useState } from "react";
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 const cx = classNames.bind(styles);
 
@@ -22,10 +23,6 @@ export default function HeaderComponent() {
   const [isAcctive, setIsAcctive] = useState(1);
 
   const menuItems = [
-    {
-      title: "Trang chủ",
-      href: "/",
-    },
     {
       title: "Trang chủ",
       href: "/",
@@ -40,17 +37,25 @@ export default function HeaderComponent() {
     },
   ];
   return (
-    <Navbar className={cx("header")} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      className={cx("header")}
+      isBordered
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Avatar
+          <Image
             src="/images/logo.png"
-            size="lg"
-            style={{ width: "80px", height: "80px" }}
+            alt="logo-icon"
+            width={500}
+            loading="lazy"
+            height={500}
+            className={cx("avatar")}
           />
         </NavbarBrand>
       </NavbarContent>
@@ -59,7 +64,7 @@ export default function HeaderComponent() {
         <NavbarItem isActive={isAcctive === 3 ? true : false}>
           <Link
             href="/products"
-            className={cx(isAcctive === 3 ? "isAcctive" : "")}
+            // className={cx(isAcctive === 3 ? "isAcctive" : "")}
             onClick={() => setIsAcctive(3)}
           >
             Sản phẩm
@@ -69,7 +74,7 @@ export default function HeaderComponent() {
           <Link
             href="/"
             aria-current="page"
-            className={cx(isAcctive === 1 ? "isAcctive" : "")}
+            // className={cx(isAcctive === 1 ? "isAcctive" : "")}
             onClick={() => setIsAcctive(1)}
           >
             Trang chủ
@@ -78,7 +83,7 @@ export default function HeaderComponent() {
         <NavbarItem isActive={isAcctive === 2 ? true : false}>
           <Link
             href="about"
-            className={cx(isAcctive === 2 ? "isAcctive" : "")}
+            // className={cx(isAcctive === 2 ? "isAcctive" : "")}
             onClick={() => setIsAcctive(2)}
           >
             Về chúng tôi
@@ -97,15 +102,21 @@ export default function HeaderComponent() {
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="w-full" href={item.href}>
-              {item.title}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
+      {isMenuOpen && (
+        <NavbarMenu>
+          {menuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item}-${index}`}>
+              <Link
+                className="w-full"
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.title}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      )}
     </Navbar>
   );
 }
