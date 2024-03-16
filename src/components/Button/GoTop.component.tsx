@@ -10,7 +10,7 @@ export default function GoTopComponent() {
   const [showTopBtn, setShowTopBtn] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 100) {
         setShowTopBtn(true);
       } else {
         setShowTopBtn(false);

@@ -126,7 +126,7 @@ interface IDetail {
   img: IImg[];
 }
 export default function ProductDetailPage({ data }: dataDetail) {
-  const dt = listDT.find((e) => e.id === data.id);
+  const dt = listDT.find((e) => (e?.id || "") === (data?.id || ""));
   const [selectedImg, setSelectedImg] = useState<string>(dt?.img[0].url || "");
   const [dataDetail, setDataDetail] = useState<IDetail | null>(null);
 

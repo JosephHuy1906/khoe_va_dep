@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import classNames from "classnames/bind";
 import style from "./Product.module.scss";
@@ -11,37 +12,42 @@ import {
   CardBody,
   CardFooter,
   Image,
+  Link,
 } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 
 const cx = classNames.bind(style);
 const list = [
   {
-    id: 1,
-    title: "Đẳng cấp sành ăn",
-    img: "/images/product-dang-cap-sang-an.jpg",
-    price: "5.50",
+    id: "1",
+    image: "product-dang-cap-sang-an.jpg",
+    title: "Đẳng cấp sàng ăn",
+    price: "5000000",
   },
   {
-    id: 2,
-    title: "Khoẻ đẹp dưởng da",
-    img: "/images/product-khoe-dep-duong-nhan.jpg",
-    price: "3.00",
+    id: "2",
+    image: "product-trai-nghiem-thu-vi.jpg",
+    title: "Trải nghiệm thú vị",
+    price: "2000000",
   },
   {
-    id: 3,
-    title: "Trải nghiệp thú vị",
-    img: "/images/product-trai-nghiem-thu-vi.jpg",
-    price: "10.00",
-  },
-  {
-    id: 4,
+    id: "3",
+    image: "product-vi-ngon-cao-cap.jpg",
     title: "Vị ngon cao cấp",
-    img: "/images/product-vi-ngon-cao-cap.jpg",
-    price: "5.30",
+    price: "4200000",
+  },
+  {
+    id: "4",
+    image: "product-khoe-dep-duong-nhan.jpg",
+    title: "Khoẻ & đẹp dưỡng nhan",
+    price: "39000",
   },
 ];
-
 export default function ProductPage() {
+  const router = useRouter();
+  const handleClick = (id: string) => {
+    router.push("/product/" + id);
+  };
   return (
     <div className={cx("product-all")}>
       <div className={cx("title")}>
@@ -51,7 +57,13 @@ export default function ProductPage() {
 
       <div className={cx("product-item")}>
         {list.map((item, index) => (
-          <Card className={cx("pro-item")} shadow="sm" key={index} isPressable>
+          <Card
+            className={cx("pro-item")}
+            shadow="sm"
+            onClick={() => handleClick(item.id)}
+            key={index}
+            isPressable
+          >
             <CardBody className="overflow-visible p-0">
               <Image
                 shadow="sm"
@@ -59,7 +71,7 @@ export default function ProductPage() {
                 width="100%"
                 alt={item.title}
                 className={cx("img-product")}
-                src={item.img}
+                src={"/images/" + item.image}
               />
             </CardBody>
             <CardFooter className="text-small justify-between">

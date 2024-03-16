@@ -49,14 +49,16 @@ export default function HeaderComponent() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Image
-            src="/images/logo.png"
-            alt="logo-icon"
-            width={500}
-            loading="lazy"
-            height={500}
-            className={cx("avatar")}
-          />
+          <Link href={"/"}>
+            <Image
+              src="/images/logo.png"
+              alt="logo-icon"
+              width={500}
+              loading="lazy"
+              height={500}
+              className={cx("avatar")}
+            />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -82,7 +84,7 @@ export default function HeaderComponent() {
         </NavbarItem>
         <NavbarItem isActive={isAcctive === 2 ? true : false}>
           <Link
-            href="about"
+            href="/about"
             // className={cx(isAcctive === 2 ? "isAcctive" : "")}
             onClick={() => setIsAcctive(2)}
           >

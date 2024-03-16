@@ -1,5 +1,6 @@
+import AboutPage from "@/pages/about/About.page";
 import React from "react";
 
 export default function page() {
-  return <div>Về chúng tôi</div>;
+  return <AboutPage />;
 }

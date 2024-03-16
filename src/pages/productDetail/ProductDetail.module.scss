@@ -188,13 +188,37 @@
 
 @media(max-width: 1000px) {
     .product-all {
-        .product-item {
-            .pro-item {
-                width: 300px;
+        width: 100%;
 
-                .img-product {
-                    height: 180px;
-                    object-fit: cover;
+        .slide-show {
+            width: 100%;
+
+            .slide-img {
+                width: 55%;
+            }
+
+            .slide-title {
+                width: 40%;
+
+                h2 {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        .detail-main {
+            width: 95%;
+
+            .detail-hed {
+                width: 100%;
+                gap: 10px;
+
+                .detail-item {
+                    width: 48%;
+
+                    p {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -203,13 +227,58 @@
 
 @media(max-width: 500px) {
     .product-all {
-        .product-item {
-            .pro-item {
-                width: 90%;
+        .slide-show {
+            width: 90%;
 
-                .img-product {
-                    height: 140px;
-                    object-fit: cover;
+            .slide-img {
+                width: 100%;
+
+                .list-img {
+                    width: 100%;
+                    display: flex;
+                    gap: 5px;
+
+                    img {
+                        width: 80px;
+                        height: 80px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .slide-title {
+                width: 100%;
+                text-align: center;
+
+                h2 {
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+
+                .star-icon {
+                    justify-content: center
+                }
+
+                .price {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .detail-main {
+            width: 95%;
+
+            .detail-hed {
+                width: 100%;
+                gap: 10px;
+
+                .detail-item {
+                    width: 90%;
+                    margin: auto;
+
+                    p {
+                        width: 100%;
+                    }
                 }
             }
         }

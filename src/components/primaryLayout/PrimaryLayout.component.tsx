@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "animate.css";
 import GoTopComponent from "../Button/GoTop.component";
+import BtnZaloComponent from "../Button/BtnZalo.component";
 
 const cx = classNames.bind(styles);
 
@@ -42,6 +43,7 @@ export default function PrimaryLayoutComponent({
       <HeaderComponent />
       <main className={cx("contents")}>{children}</main>
       <FooterComponent />
+      <BtnZaloComponent />
       <GoTopComponent />
     </div>
   );
