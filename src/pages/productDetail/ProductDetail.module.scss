@@ -12,23 +12,144 @@
         line-height: 50px;
     }
 
-    .product-item {
-        width: 100%;
+    .slide-show {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
 
-        .pro-item {
-            width: 300px;
+        .slide-img {
+            width: 40%;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-content: center;
+            gap: 20px;
+            // justify-items: center;
 
-            .img-product {
-                height: 200px;
+            .img-main {
+                width: 440px;
                 object-fit: cover;
             }
+
+            .list-img {
+                width: 100%;
+                display: flex;
+                gap: 10px;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .slide-title {
+            width: 50%;
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            p {
+                color: gray;
+                font-size: 0.8rem;
+            }
+
+            .star-icon {
+                width: 100%;
+                padding: 10px;
+                display: flex;
+                gap: 5px;
+
+                .icon {
+                    color: #FC8800;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .price {
+                display: flex;
+                gap: 10px;
+                height: 50px;
+                line-height: 50px;
+
+                p {
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                }
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .lienhe {
+                margin-top: 30px;
+                font-size: large;
+                width: 150px;
+                height: 50px;
+                background: green;
+                color: white;
+            }
+        }
+
+
+    }
+
+}
+
+.detail-main {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+
+    .detail-title {
+        text-align: center;
+
+        h2 {
+            text-align: center;
+            height: 40px;
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: gray;
+        }
+
+    }
+
+    .detail-hed {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+
+        p {
+            width: 400px;
         }
     }
 
+    .detail-img {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 20px;
+
+        img {
+            height: 300px;
+            object-fit: cover;
+        }
+    }
 }
 
 
