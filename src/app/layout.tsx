@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/logo.jpeg",
   },
+  keywords: [
+    "yến sào khánh hoà",
+    "yến sào khoẻ và đẹp",
+    "yến sào khánh hoà giá rẻ và chất lượng",
+    "yến sào khánh hoà giá rẻ tại tân bình",
+    "khoẻ và đẹp 54",
+    "yến sào khánh hoà khoẻ và đẹp",
+  ],
 };
 
 export default function RootLayout({

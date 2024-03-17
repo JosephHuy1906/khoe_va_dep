@@ -44,19 +44,6 @@ const data = [
 export default function HomePage() {
   return (
     <>
-      <Head>
-        <title>Yến sào khoẻ và đẹp quận tân bình</title>
-        <meta
-          name="description"
-          content="Yến sào khánh hoà khoẻ & đẹp tại quận Tân Bình"
-          key="desc"
-        />
-        <meta
-          name="description"
-          content="Yến sào khánh hoà giá rẻ và chất lượng tại Tân Bình"
-        />
-      </Head>
-
       <div className={cx("banner")}>
         <div className={cx("banner-img")}>
           <Image
@@ -78,11 +65,9 @@ export default function HomePage() {
           />
           <div className={cx("title-banner")}>
             <h1 className="animate__animated animate__backInDown animate__delay-3s ">
-              Yến sào Khánh Hoà
+              Yến sào Khánh Hoà Khoẻ & đẹp
             </h1>
-            <h2 className="animate__animated animate__backInUp animate__delay-4s">
-              Khoẻ & đẹp
-            </h2>
+
             <p className="animate__animated animate__lightSpeedInRight animate__delay-5s">
               Thực phẩm dưỡng healty tốt cho sức khoẻ{" "}
             </p>
