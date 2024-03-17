@@ -7,8 +7,9 @@ import PrimaryLayoutComponent from "@/components/primaryLayout/PrimaryLayout.com
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Yến sào khánh hoà Khoẻ & đẹp",
-  description: "Yến Sào khánh hoà Khoẻ & đẹp tại quận Tân Bình",
+  title: "Yến sào khánh hoà Khoẻ và đẹp tại Tân Bình",
+  description:
+    "Yến Sào khánh hoà Khoẻ và đẹp. Nơi cung cấp yến sào uy tính chất lượng và giá cả phải chăng tại quận Tân Bình, Tp Hồ Chí Minh. Giao hàng trong ngày trong khu vực Hồ Chí Minh, hãy xem và mua ngay để được những giá cả hợp lý",
   icons: {
     icon: "/images/logo.jpeg",
   },
