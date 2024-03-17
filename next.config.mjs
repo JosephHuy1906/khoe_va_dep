@@ -4,14 +4,7 @@ const nextConfig = {
     unoptimized: true,
   },
   output: "export",
-  async rewrites() {
-    return [
-      {
-        source: "/:path*",
-        destination: "/404",
-      },
-    ];
-  },
+  trailingSlash: true,
 };
 
 export default nextConfig;

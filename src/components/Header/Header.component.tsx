@@ -57,6 +57,7 @@ export default function HeaderComponent() {
               loading="lazy"
               height={500}
               className={cx("avatar")}
+              title="logo-khoe&dep54"
             />
           </Link>
         </NavbarBrand>

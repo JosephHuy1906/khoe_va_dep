@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import classNames from "classnames/bind";
 import styles from "./Home.module.scss";
@@ -8,6 +9,7 @@ import { FaTruckMoving } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import { BsBox2Heart } from "react-icons/bs";
 import Link from "next/link";
+import Head from "next/head";
 
 const cx = classNames.bind(styles);
 
@@ -42,6 +44,19 @@ const data = [
 export default function HomePage() {
   return (
     <>
+      <Head>
+        <title>Yến sào khoẻ và đẹp quận tân bình</title>
+        <meta
+          name="description"
+          content="Yến sào khánh hoà khoẻ & đẹp tại quận Tân Bình"
+          key="desc"
+        />
+        <meta
+          name="description"
+          content="Yến sào khánh hoà giá rẻ và chất lượng tại Tân Bình"
+        />
+      </Head>
+
       <div className={cx("banner")}>
         <div className={cx("banner-img")}>
           <Image
@@ -51,6 +66,7 @@ export default function HomePage() {
             src="/images/banner.jpeg"
             className={cx("img")}
             loading="lazy"
+            title="banner-yensao-khoevadep54"
           />
           <img
             width={1230}
@@ -61,9 +77,9 @@ export default function HomePage() {
             loading="eager"
           />
           <div className={cx("title-banner")}>
-            <h2 className="animate__animated animate__backInDown animate__delay-3s ">
+            <h1 className="animate__animated animate__backInDown animate__delay-3s ">
               Yến sào Khánh Hoà
-            </h2>
+            </h1>
             <h2 className="animate__animated animate__backInUp animate__delay-4s">
               Khoẻ & đẹp
             </h2>
@@ -95,6 +111,7 @@ export default function HomePage() {
                   src={"/images/" + item.image}
                   className={cx("item-img")}
                   alt="img-product"
+                  title={"san-pham-" + item.name}
                 />
               </div>
               <h2 data-aos="fade-down" data-aos-duration={index + "000"}>
@@ -129,6 +146,7 @@ export default function HomePage() {
               height={500}
               className={cx("about-img")}
               alt="about-img"
+              title="noi-san-xuat-yen-tai-khoe-va-dep54"
             />
           </div>
           <div className={cx("content")}>

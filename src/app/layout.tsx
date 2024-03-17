@@ -7,8 +7,8 @@ import PrimaryLayoutComponent from "@/components/primaryLayout/PrimaryLayout.com
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Khoẻ & đẹp",
-  description: "Yến Sào Khánh Hoà Khoẻ & đẹp",
+  title: "Yến sào khánh hoà Khoẻ & đẹp",
+  description: "Yến Sào khánh hoà Khoẻ & đẹp tại quận Tân Bình",
   icons: {
     icon: "/images/logo.jpeg",
   },

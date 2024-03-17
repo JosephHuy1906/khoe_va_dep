@@ -24,6 +24,7 @@ export default function FooterComponent() {
             width={100}
             height={100}
             alt="logo-khoe-va-dep"
+            title="logo-khoe&dep54"
           />
           <p>Luôn đặt sự uy tín và chất lượng của sản phẩm lên hàng đầu.</p>
         </div>
