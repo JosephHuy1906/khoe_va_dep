@@ -204,7 +204,7 @@ export default function ProductDetailPage({ data }: dataDetail) {
         <div className={cx("detail-hed")}>
           <div className={cx("detail-item")}>
             <h2>THÔNG TIN SẢN PHẨM</h2>
-            <p>- Thương hiệu: Việt Nam Quốc Yến</p>
+            <p>- Thương hiệu: Yến sào khánh hoà khoẻ & đẹp</p>
             <p>- Xuất xứ: Việt Nam</p>
             <p>- Màu sắc: Trắng</p>
             <p>- Thành phần: Tổ yến nguyên chất 100%</p>
