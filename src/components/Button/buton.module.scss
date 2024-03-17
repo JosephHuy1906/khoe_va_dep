@@ -6,12 +6,14 @@
     position: fixed;
     right: 10px;
     bottom: 10px;
+    z-index: 99999;
 }
 
 .zalo-icon {
     position: fixed;
     right: 10px;
     bottom: 60px;
+    z-index: 99999;
 }
 
 .zalo-icon:hover {

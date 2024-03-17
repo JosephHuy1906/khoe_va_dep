@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Khoẻ & đẹp",
   description: "Yến Sào Khánh Hoà Khoẻ & đẹp",
+  icons: {
+    icon: "/images/logo.jpeg",
+  },
 };
 
 export default function RootLayout({

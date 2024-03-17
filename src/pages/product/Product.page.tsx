@@ -21,7 +21,7 @@ const list = [
   {
     id: "1",
     image: "product-dang-cap-sang-an.jpg",
-    title: "Đẳng cấp sàng ăn",
+    title: "Đẳng cấp sành ăn",
     price: "5000000",
   },
   {

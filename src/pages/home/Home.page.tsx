@@ -16,7 +16,7 @@ const data = [
     id: 1,
     image: "product-dang-cap-sang-an.jpg",
     slug: "dang-cap-sang-an",
-    name: "Đẳng cấp sàng ăn",
+    name: "Đẳng cấp sành ăn",
     price: 5000000,
   },
   {
