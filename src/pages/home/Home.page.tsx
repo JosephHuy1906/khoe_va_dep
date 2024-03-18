@@ -19,25 +19,25 @@ const data = [
     image: "product-dang-cap-sang-an.jpg",
     slug: "dang-cap-sang-an",
     name: "Đẳng cấp sành ăn",
-    price: 5000000,
+    price: 5200000,
   },
   {
     id: 2,
     image: "product-trai-nghiem-thu-vi.jpg",
     name: "Trải nghiệm thú vị",
-    price: 2000000,
+    price: 4400000,
   },
   {
     id: 3,
     image: "product-vi-ngon-cao-cap.jpg",
     name: "Vị ngon cao cấp",
-    price: 4200000,
+    price: 2500000,
   },
   {
     id: 4,
     image: "product-khoe-dep-duong-nhan.jpg",
     name: "Khoẻ & đẹp dưỡng nhan",
-    price: 39000,
+    price: 59000,
   },
 ];
 

@@ -14,7 +14,7 @@ const listDT = [
     id: "1",
     image: "product-dang-cap-sang-an.jpg",
     title: "Đẳng cấp sành ăn",
-    price: "5000000",
+    price: "5,200,000",
     img: [
       {
         id: 1,
@@ -38,7 +38,7 @@ const listDT = [
     id: "2",
     image: "product-trai-nghiem-thu-vi.jpg",
     title: "Trải nghiệm thú vị",
-    price: "2000000",
+    price: "4,400,000",
     img: [
       {
         id: 1,
@@ -62,7 +62,7 @@ const listDT = [
     id: "3",
     image: "product-vi-ngon-cao-cap.jpg",
     title: "Vị ngon cao cấp",
-    price: "4200000",
+    price: "2,500,000",
     img: [
       {
         id: 1,
@@ -86,7 +86,7 @@ const listDT = [
     id: "4",
     image: "product-khoe-dep-duong-nhan.jpg",
     title: "Khoẻ & đẹp dưỡng nhan",
-    price: "39000",
+    price: "59,000",
     img: [
       {
         id: 1,
