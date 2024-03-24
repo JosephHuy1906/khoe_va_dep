@@ -8,6 +8,7 @@ import { BiSupport } from "react-icons/bi";
 import { Button, Image } from "@nextui-org/react";
 import { getLocalstorage } from "@/utils/LocalStorage";
 import { getProductById } from "@/services/Product.service";
+import Link from "next/link";
 
 const cx = classNames.bind(style);
 
@@ -127,7 +128,13 @@ export default function ProductDetailPage() {
             <p style={{ color: "red" }}>{dataDetail?.price}</p>
           </div>
           <p>{dataDetail?.describe}</p>
-          <Button className={cx("lienhe")}>Liên hệ</Button>
+          <Button
+            as={Link}
+            href="https://www.facebook.com/khanhannest.111"
+            className={cx("lienhe")}
+          >
+            Liên hệ
+          </Button>
         </div>
       </div>
       <div className={cx("detail-main")}>

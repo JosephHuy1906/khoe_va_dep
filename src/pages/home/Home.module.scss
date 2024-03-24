@@ -343,6 +343,7 @@
             grid-template-columns: 48% 48%;
 
             .item {
+                width: 90%;
 
                 h2 {
                     font-size: 1rem;
@@ -353,7 +354,9 @@
                 }
 
                 .item-img {
-                    height: 150px
+                    height: 150px;
+                    object-fit: cover;
+
                 }
 
                 .star {
