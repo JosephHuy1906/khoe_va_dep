@@ -1,47 +1,34 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import styles from "./Home.module.scss";
 import { FaStar } from "react-icons/fa6";
 import { Image } from "@nextui-org/react";
-import formatVND from "@/utils/formatMoney";
 import { FaTruckMoving } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import { BsBox2Heart } from "react-icons/bs";
-import Link from "next/link";
-import Head from "next/head";
+import { getProductAll } from "@/services/Product.service";
+import { setLocalstorage } from "@/utils/LocalStorage";
+import { useRouter } from "next/navigation";
+import { IProductArr } from "@/interfaces";
 
 const cx = classNames.bind(styles);
 
-const data = [
-  {
-    id: 1,
-    image: "product-dang-cap-sang-an.jpg",
-    slug: "dang-cap-sang-an",
-    name: "Đẳng cấp sành ăn",
-    price: 5200000,
-  },
-  {
-    id: 2,
-    image: "product-trai-nghiem-thu-vi.jpg",
-    name: "Trải nghiệm thú vị",
-    price: 4400000,
-  },
-  {
-    id: 3,
-    image: "product-vi-ngon-cao-cap.jpg",
-    name: "Vị ngon cao cấp",
-    price: 2500000,
-  },
-  {
-    id: 4,
-    image: "product-khoe-dep-duong-nhan.jpg",
-    name: "Khoẻ & đẹp dưỡng nhan",
-    price: 59000,
-  },
-];
-
 export default function HomePage() {
+  const router = useRouter();
+  const [data, setData] = useState<IProductArr[]>([]);
+  useEffect(() => {
+    getProductAll().then((res) => {
+      setData(res.data);
+    });
+  }, []);
+  const hanldProductId = (id: string) => {
+    console.log("id", id);
+
+    setLocalstorage("idPr", id);
+    router.replace("/productDetail");
+  };
   return (
     <>
       <div className={cx("banner")}>
@@ -84,22 +71,26 @@ export default function HomePage() {
         </div>
         <div className={cx("product-item")}>
           {data.map((item, index) => (
-            <Link
+            <div
               key={item.id}
               className={cx("item")}
-              href={"/product/" + item.id}
+              onClick={() => hanldProductId(item.id)}
             >
               <div data-aos="fade-up" data-aos-duration={index + "000"}>
                 <Image
                   width={1000}
                   height={300}
-                  src={"/images/" + item.image}
+                  src={item.img1}
                   className={cx("item-img")}
                   alt="img-product"
                   title={"san-pham-" + item.name}
                 />
               </div>
-              <h2 data-aos="fade-down" data-aos-duration={index + "000"}>
+              <h2
+                data-aos="fade-down"
+                data-aos-duration={index + "000"}
+                onClick={() => hanldProductId(item.id)}
+              >
                 {item.name}
               </h2>
               <div
@@ -116,9 +107,9 @@ export default function HomePage() {
                 <FaStar className={cx("icon-star")} />
               </div>
               <p data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-                Giá: {formatVND(item.price)}
+                Giá: {item.price}
               </p>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

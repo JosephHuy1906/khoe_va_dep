@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import style from "./Product.module.scss";
 import { FaTruckMoving } from "react-icons/fa6";
@@ -15,38 +15,25 @@ import {
   Link,
 } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import { getProductAll } from "@/services/Product.service";
+import { IProductArr } from "@/interfaces";
+import { setLocalstorage } from "@/utils/LocalStorage";
 
 const cx = classNames.bind(style);
-const list = [
-  {
-    id: "1",
-    image: "product-dang-cap-sang-an.jpg",
-    title: "Đẳng cấp sành ăn",
-    price: "5,200,000",
-  },
-  {
-    id: "2",
-    image: "product-trai-nghiem-thu-vi.jpg",
-    title: "Trải nghiệm thú vị",
-    price: "4,400,000",
-  },
-  {
-    id: "3",
-    image: "product-vi-ngon-cao-cap.jpg",
-    title: "Vị ngon cao cấp",
-    price: "2,500,000",
-  },
-  {
-    id: "4",
-    image: "product-khoe-dep-duong-nhan.jpg",
-    title: "Khoẻ & đẹp dưỡng nhan",
-    price: "59,000",
-  },
-];
+
 export default function ProductPage() {
   const router = useRouter();
-  const handleClick = (id: string) => {
-    router.push("/product/" + id);
+  const [data, setData] = useState<IProductArr[]>([]);
+  useEffect(() => {
+    getProductAll().then((res) => {
+      setData(res.data);
+    });
+  }, []);
+  const hanldProductId = (id: string) => {
+    console.log("id", id);
+
+    setLocalstorage("idPr", id);
+    router.replace("/productDetail");
   };
   return (
     <div className={cx("product-all")}>
@@ -56,11 +43,11 @@ export default function ProductPage() {
       </div>
 
       <div className={cx("product-item")}>
-        {list.map((item, index) => (
+        {data.map((item, index) => (
           <Card
             className={cx("pro-item")}
             shadow="sm"
-            onClick={() => handleClick(item.id)}
+            onClick={() => hanldProductId(item.id)}
             key={index}
             isPressable
           >
@@ -69,13 +56,13 @@ export default function ProductPage() {
                 shadow="sm"
                 radius="lg"
                 width="100%"
-                alt={item.title}
+                alt={item.name}
                 className={cx("img-product")}
-                src={"/images/" + item.image}
+                src={item.img1}
               />
             </CardBody>
             <CardFooter className="text-small justify-between">
-              <b className="text-green-00">{item.title}</b>
+              <b className="text-green-00">{item.name}</b>
               <p className="text-green-00">{item.price}</p>
             </CardFooter>
           </Card>

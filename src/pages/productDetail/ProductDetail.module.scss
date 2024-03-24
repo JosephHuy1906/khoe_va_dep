@@ -10,6 +10,7 @@
         font-size: 1.2rem;
         height: 50px;
         line-height: 50px;
+        margin-left: 12%;
     }
 
     .slide-show {
@@ -132,8 +133,19 @@
         gap: 20px;
         justify-content: space-around;
 
+        .detail-item {
+
+            h3 {
+                height: 50px;
+                line-height: 50px;
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+        }
+
         p {
             width: 400px;
+            color: black;
         }
     }
 
@@ -150,6 +162,17 @@
             object-fit: cover;
         }
     }
+
+    .detail-item-bt {
+
+
+
+        p {
+            width: 100%;
+            color: black;
+        }
+    }
+
 }
 
 
@@ -162,7 +185,6 @@
 
     .cont-ul {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 10px;
@@ -216,6 +238,13 @@
                 .detail-item {
                     width: 48%;
 
+                    h3 {
+                        height: 50px;
+                        line-height: 50px;
+                        font-weight: bold;
+                        font-size: 1.1rem;
+                    }
+
                     p {
                         width: 100%;
                     }
@@ -227,6 +256,14 @@
 
 @media(max-width: 500px) {
     .product-all {
+        h2 {
+            font-size: 1rem;
+            width: 100%;
+            margin-left: 20px;
+            height: 30px;
+            line-height: 30px;
+        }
+
         .slide-show {
             width: 90%;
 
@@ -276,11 +313,24 @@
                     width: 90%;
                     margin: auto;
 
+                    h3 {
+                        height: 50px;
+                        line-height: 50px;
+                        font-weight: bold;
+                        font-size: 1.1rem;
+                    }
+
                     p {
                         width: 100%;
                     }
                 }
             }
+        }
+    }
+
+    .content-bot {
+        .cont-ul {
+            flex-wrap: wrap;
         }
     }
 }
